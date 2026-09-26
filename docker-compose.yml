@@ -52,6 +52,10 @@ services:
       - "3000:3000"
     environment:
       - WDS_SOCKET_PORT=0
+      - HOST=0.0.0.0
+      - BROWSER=none
+      - CHOKIDAR_USEPOLLING=true
+      - CI=true
     stdin_open: true
     tty: true
     depends_on:
