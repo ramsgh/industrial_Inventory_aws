@@ -8,9 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a38e0da1-df8c-41c4-a7e8-938aa40349bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/industrial-inventory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/industrial-inventory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/inventory/GatewaySecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/inventory/GatewaySecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-registry/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/service-registry/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,29 +35,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ramsgh&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ramsgh/Industrial_Inventory_docker.git&quot;,
+    &quot;accountId&quot;: &quot;63639275-28cc-4214-90f1-19ed32db430d&quot;
+  }
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="MS100" value="1.429282718218967" />
+      <entry key="MS500" value="1.8525129095900317" />
+      <entry key="S2" value="3.4881200143290565" />
+      <entry key="S5" value="7.9619198494604415" />
+      <entry key="S10" value="13.875426955251239" />
+      <entry key="S30" value="25.667009644957393" />
+      <entry key="S60" value="34.6240975126665" />
+      <entry key="M2" value="56.761705853720905" />
+      <entry key="M5" value="127.01379761156689" />
+      <entry key="M10" value="223.36061420312586" />
+      <entry key="M15" value="316.26619600054886" />
+      <entry key="M30" value="554.957888059963" />
+      <entry key="H1" value="830.8621271814076" />
+      <entry key="H2" value="1053.942144747868" />
+      <entry key="H4" value="1197.9868484682152" />
+      <entry key="D1" value="1339.146309305852" />
+      <entry key="W1" value="1365.5353272951827" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -72,23 +91,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0022591566091900135" />
-      <entry key="MS500" value="0.2956577500610357" />
-      <entry key="S2" value="0.7373901243083213" />
-      <entry key="S5" value="0.8852764814526901" />
-      <entry key="S10" value="0.9408913228703356" />
-      <entry key="S30" value="0.9798956305866054" />
-      <entry key="S60" value="0.9898967777433187" />
-      <entry key="M2" value="0.9949355646187942" />
-      <entry key="M5" value="0.9979711396860707" />
-      <entry key="M10" value="0.9989850547861417" />
-      <entry key="M15" value="0.9993232553486797" />
-      <entry key="M30" value="0.9996615704070452" />
-      <entry key="H1" value="0.9998307708842757" />
-      <entry key="H2" value="0.9999153818620232" />
-      <entry key="H4" value="0.9999576900359451" />
-      <entry key="D1" value="0.9999929482150062" />
-      <entry key="W1" value="0.9999989925990992" />
+      <entry key="MS100" value="1.0946666774717009" />
+      <entry key="MS500" value="1.758369545473045" />
+      <entry key="S2" value="3.4528170128904643" />
+      <entry key="S5" value="7.930613093687844" />
+      <entry key="S10" value="13.839421353631245" />
+      <entry key="S30" value="25.638352820684755" />
+      <entry key="S60" value="34.60510962435051" />
+      <entry key="M2" value="56.74976865135797" />
+      <entry key="M5" value="127.00710170884136" />
+      <entry key="M10" value="223.3561992604976" />
+      <entry key="M15" value="316.26263150252163" />
+      <entry key="M30" value="554.9553071108835" />
+      <entry key="H1" value="830.8603555084582" />
+      <entry key="H2" value="1053.941057930144" />
+      <entry key="H4" value="1197.9862389595955" />
+      <entry key="D1" value="1339.1461967948412" />
+      <entry key="W1" value="1365.5353109285224" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -115,38 +134,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.api-gateway [install].executor": "Run",
-    "Maven.product-service [install].executor": "Run",
-    "Maven.service-registry [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/E_Downloads/VAccel/springboot_ecomapp/industrial-inventory_new/industrial-inventory",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.api-gateway [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.product-service [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.service-registry [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/E_Downloads/VAccel/springboot_ecomapp/industrial-inventory_new/industrial-inventory&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -182,8 +201,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.27258.48" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.27258.48" />
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.9437.185" />
       </set>
     </attachedChunks>
   </component>

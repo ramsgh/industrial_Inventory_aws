@@ -1,37 +1,27 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Ignored default folder with query files
-/queries/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# IDE files
+.idea/
+*.iml
 
-# Ignore all compiled Java class files
+# Generated Java and frontend build output
+**/target/
+**/build/
+**/node_modules/
 *.class
-
-# Ignore all build archives (JARs, WARs)
 *.jar
 *.war
 
-# Ignore build target directories (for Maven and Gradle)
-target/
-build/
+# Terraform local state and configuration
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+terraform.tfvars
 
-# Ignore all compiled Java class files
-*.class
-
-# Ignore all build archives (JARs, WARs)
-*.jar
-*.war
-
-# Ignore build target directories (for Maven and Gradle)
-target/
-build/
-
-# Ignore target folders in the root and all sub-modules
-target/
-*.class
-*.jar
+# Local/editor files
+.DS_Store
+**/.DS_Store
+shelf/
+httpRequests/
+queries/
+dataSources/
+dataSources.local.xml

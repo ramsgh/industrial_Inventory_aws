@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const GATEWAY_URL = "http://localhost:8080/api/products";
+const GATEWAY_URL = process.env.REACT_APP_API_URL
+  || (window.location.hostname === "localhost"
+    ? "http://localhost:8080/api/products"
+    : "/api/products");
 
 function App() {
   const [products, setProducts] = useState([]);

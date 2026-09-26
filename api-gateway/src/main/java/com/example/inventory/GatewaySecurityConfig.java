@@ -18,6 +18,7 @@ public class GatewaySecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeExchange(exchanges -> exchanges
+                .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .pathMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                 .anyExchange().authenticated()
             )

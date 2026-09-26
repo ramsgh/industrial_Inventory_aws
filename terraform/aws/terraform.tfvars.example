@@ -1,0 +1,5 @@
+aws_region   = "us-east-1"
+project_name = "industrial-inventory"
+az_count     = 2
+desired_count = 0
+image_tag    = "latest"

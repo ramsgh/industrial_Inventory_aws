@@ -1,15 +1,20 @@
-version: '3.8'
 
 services:
   mongodb:
-    image: mongo:latest
+    image: mongo:7.0
     container_name: inventory-mongodb
     ports:
-      - "27017:27017"
+      - "127.0.0.1:27017:27017"
     networks:
       - inventory-network
     volumes:
       - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "mongodb://localhost:27017/admin", "--eval", "db.runCommand({ ping: 1 }).ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   service-registry:
     build: ./service-registry
@@ -28,8 +33,10 @@ services:
       - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/inventory_db
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
     depends_on:
-      - mongodb
-      - service-registry
+      mongodb:
+        condition: service_healthy
+      service-registry:
+        condition: service_started
     networks:
       - inventory-network
 
@@ -51,6 +58,7 @@ services:
     ports:
       - "3000:3000"
     environment:
+      - REACT_APP_API_URL=http://localhost:8080/api/products
       - WDS_SOCKET_PORT=0
       - HOST=0.0.0.0
       - BROWSER=none
