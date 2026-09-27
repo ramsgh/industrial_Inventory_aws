@@ -6,6 +6,7 @@
 **/target/
 **/build/
 **/node_modules/
+data/mongo/
 *.class
 *.jar
 *.war

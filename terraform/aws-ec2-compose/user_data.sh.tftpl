@@ -1,0 +1,63 @@
+#!/bin/bash
+set -euo pipefail
+
+exec > >(tee -a /var/log/inventory-bootstrap.log | logger -t inventory-bootstrap -s 2>/dev/console) 2>&1
+
+dnf update -y
+dnf install -y docker git curl xfsprogs
+systemctl enable --now docker
+usermod -aG docker ec2-user
+
+mkdir -p /usr/local/lib/docker/cli-plugins
+curl -fsSL \
+  https://github.com/docker/compose/releases/download/v2.32.4/docker-compose-linux-x86_64 \
+  -o /usr/local/lib/docker/cli-plugins/docker-compose
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+MONGO_DEVICE=""
+for attempt in $(seq 1 60); do
+  for device in /dev/nvme*n1; do
+    [ -b "$device" ] || continue
+    attached_volume_id=$(/sbin/ebsnvme-id "$device" | awk '/Volume ID:/ {print $3}')
+    if [ "$attached_volume_id" = "${mongo_volume_id}" ]; then
+      MONGO_DEVICE="$device"
+      break 2
+    fi
+  done
+  sleep 5
+done
+
+if [ -z "$MONGO_DEVICE" ]; then
+  echo "Could not find MongoDB EBS volume ${mongo_volume_id}" >&2
+  exit 1
+fi
+
+if ! blkid "$MONGO_DEVICE" >/dev/null 2>&1; then
+  mkfs -t xfs "$MONGO_DEVICE"
+fi
+
+mkdir -p /mnt/mongo-data
+MONGO_UUID=$(blkid -s UUID -o value "$MONGO_DEVICE")
+grep -q "$MONGO_UUID" /etc/fstab || \
+  echo "UUID=$MONGO_UUID /mnt/mongo-data xfs defaults,nofail 0 2" >> /etc/fstab
+mount /mnt/mongo-data
+chown 999:999 /mnt/mongo-data
+chmod 700 /mnt/mongo-data
+
+install -d -o ec2-user -g ec2-user /opt/industrial-inventory
+git clone \
+  --depth 1 \
+  --branch "${repository_branch}" \
+  "${repository_url}" \
+  /opt/industrial-inventory
+
+cat > /opt/industrial-inventory/.env <<EOF
+APP_FRONTEND_ORIGIN=http://${app_public_ip}:3000
+REACT_APP_API_URL=http://${app_public_ip}:8080/api/products
+MONGO_DATA_DIR=/mnt/mongo-data
+EOF
+chown ec2-user:ec2-user /opt/industrial-inventory/.env
+chmod 600 /opt/industrial-inventory/.env
+
+cd /opt/industrial-inventory
+docker compose up --build -d

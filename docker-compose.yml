@@ -8,7 +8,7 @@ services:
     networks:
       - inventory-network
     volumes:
-      - mongo-data:/data/db
+      - ${MONGO_DATA_DIR:-./data/mongo}:/data/db
     healthcheck:
       test: ["CMD", "mongosh", "--quiet", "mongodb://localhost:27017/admin", "--eval", "db.runCommand({ ping: 1 }).ok"]
       interval: 10s
@@ -46,6 +46,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - APP_FRONTEND_ORIGIN=${APP_FRONTEND_ORIGIN:-http://localhost:3000}
       - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
     depends_on:
       - service-registry
@@ -58,7 +59,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_URL=http://localhost:8080/api/products
+      - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:8080/api/products}
       - WDS_SOCKET_PORT=0
       - HOST=0.0.0.0
       - BROWSER=none
@@ -74,6 +75,3 @@ services:
 networks:
   inventory-network:
     driver: bridge
-
-volumes:
-  mongo-data:

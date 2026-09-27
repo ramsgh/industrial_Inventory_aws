@@ -120,3 +120,10 @@ cd ../api-gateway && mvn clean package
 ```
 
 Alternatively, `docker compose up --build` builds all application images, including the Java packages, without requiring Maven to be installed on the host.
+
+## AWS deployment options
+
+- [ECS Fargate, S3, and CloudFront](README-AWS.md) — multi-service AWS deployment managed by Terraform.
+- [Single EC2 instance with Docker Compose](README-AWS-EC2.md) — simpler educational deployment with MongoDB data on a separate EBS volume.
+
+These are separate Terraform configurations under `terraform/`. Use one architecture at a time; each has its own deployment and teardown instructions.
