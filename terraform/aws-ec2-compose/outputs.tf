@@ -4,18 +4,18 @@ output "instance_id" {
 }
 
 output "instance_public_ip" {
-  description = "Stable Elastic IP address."
-  value       = aws_eip.app.public_ip
+  description = "EC2 public IPv4 address. It may change if the instance is stopped and started."
+  value       = aws_instance.app.public_ip
 }
 
 output "frontend_url" {
   description = "React development server URL."
-  value       = "http://${aws_eip.app.public_ip}:3000"
+  value       = "http://${aws_instance.app.public_ip}:3000"
 }
 
 output "api_url" {
   description = "API gateway URL."
-  value       = "http://${aws_eip.app.public_ip}:8080/api/products"
+  value       = "http://${aws_instance.app.public_ip}:8080/api/products"
 }
 
 output "mongo_ebs_volume_id" {

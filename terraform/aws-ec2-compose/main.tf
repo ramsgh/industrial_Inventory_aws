@@ -94,10 +94,6 @@ resource "aws_ebs_volume" "mongodb" {
   encrypted         = true
 }
 
-resource "aws_eip" "app" {
-  domain = "vpc"
-}
-
 resource "aws_instance" "app" {
   ami                         = data.aws_ssm_parameter.amazon_linux_2023.value
   instance_type               = var.instance_type
@@ -105,7 +101,7 @@ resource "aws_instance" "app" {
   vpc_security_group_ids      = [aws_security_group.app.id]
   iam_instance_profile        = aws_iam_instance_profile.ec2.name
   associate_public_ip_address = true
-  user_data_replace_on_change = false
+  user_data_replace_on_change = true
 
   metadata_options {
     http_endpoint = "enabled"
@@ -123,17 +119,11 @@ resource "aws_instance" "app" {
     repository_url    = var.repository_url
     repository_branch = var.repository_branch
     mongo_volume_id   = aws_ebs_volume.mongodb.id
-    app_public_ip     = aws_eip.app.public_ip
   })
 
   tags = {
     Name = var.project_name
   }
-}
-
-resource "aws_eip_association" "app" {
-  allocation_id = aws_eip.app.id
-  instance_id   = aws_instance.app.id
 }
 
 resource "aws_volume_attachment" "mongodb" {
